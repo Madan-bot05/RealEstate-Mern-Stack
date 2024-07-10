@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json());
 
 app.listen(3000, () => {
-  console.log("Server is Running in 3000");
+  console.log("Server is Running in 3000 you can check");
 });
 
 
