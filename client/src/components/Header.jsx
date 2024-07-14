@@ -25,7 +25,9 @@ function Header() {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center cursor-pointer">
         <a className="font-semibold text-blue-800 mr-5 hover:text-gray-900" href="/profile">Profile</a>
         <a className="font-semibold text-blue-800 mr-5 hover:text-gray-900" href="/about">About Us</a>
-        <a className="font-semibold text-blue-800 mr-5 hover:text-gray-900" href="/sign-in">Log In</a>
+        <a className="font-semibold text-blue-800 mr-5 hover:text-gray-900" href="/profile">
+        {currentUser ? (<img className="rounded-full h-14 w-14 object-cover" src={currentUser.avatar} alt="profile"/>):(<li className="font-semibold text-blue-800 mr-5 hover:text-gray-900">Sign In</li>)}
+        </a>
         {/* <a className="mr-5 hover:text-gray-900">Fourth Link</a> */}
       </nav>
     </div>

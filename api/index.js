@@ -7,6 +7,7 @@ import authRouter from "./routes/auth.route.js";
 
 dotenv.config();
 
+
 mongoose.connect(process.env.MONGO).then(() => {
   console.log("Connected to Mongoose");
 }).catch((err)=>{
@@ -20,7 +21,6 @@ app.listen(3000, () => {
   console.log("Server is Running in 3000 you can check");
 });
 
-
 app.use('/api/user',userRouter)
 app.use('/api/auth',authRouter)
 app.use((err,req,res,next) => {
@@ -32,3 +32,5 @@ app.use((err,req,res,next) => {
     message
   })
 })
+
+
