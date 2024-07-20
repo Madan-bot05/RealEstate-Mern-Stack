@@ -8,7 +8,9 @@ function Profile() {
   const {currentUser}=useSelector((state)=>state.user)
   const [file,setFile]=useState(undefined)
   console.log(file)
+  const [filePerc,setFilePerc]=useState(0)
 
+  console.log(filePerc)
   //firebase Storage
   // allow read;
   // allow write:if
@@ -28,7 +30,7 @@ function Profile() {
     const uploadtask=uploadBytesResumable(storageRef,file)
     uploadtask.on('state_changed',snapshot=>{
       const progress=(snapshot.bytesTransferred/snapshot.totalBytes)*100;
-      console.log(progress)
+      setFilePerc(Math.round(progress))
       },error=>{
         console.log(error)
         },()=>{
